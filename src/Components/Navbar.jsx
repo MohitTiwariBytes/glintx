@@ -1,14 +1,46 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Logo from "../assets/GlintXLogo.png";
 import "./Navbar.css";
-import { useState } from "react";
+import gsap from "gsap";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
+  const textRef1 = useRef(null);
+  const textRef2 = useRef(null);
+  const textRef3 = useRef(null);
+
   function handleClick() {
     setIsOpen(!isOpen);
   }
+
+  useEffect(() => {
+    const timeline = gsap.timeline({ paused: true });
+
+    timeline.to(".menu", {
+      duration: 0.5,
+      y: "0",
+    });
+    timeline.fromTo(
+      ".menu-item a",
+      {
+        top: "1700px",
+      },
+      {
+        top: "0px",
+        duration: 1.1,
+        ease: "power4.out",
+        stagger: 0.1,
+      }
+    );
+
+    if (isOpen) {
+      timeline.play();
+    } else {
+      gsap.set(".menu", { y: "-100%" });
+      timeline.reverse();
+    }
+  }, [isOpen]);
+
   return (
     <div className="main-navbar">
       <div className="navbar-main">
@@ -27,22 +59,22 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div
-        style={{
-          height: isOpen ? "100%" : "0",
-          marginTop: isOpen ? "0" : "-1000px",
-        }}
-        className="menu"
-      >
+      <div className="menu">
         <div className="menu-items">
           <div className="menu-item">
-            <a href="#">Home</a>
+            <a ref={textRef1} href="#">
+              Home
+            </a>
           </div>
           <div className="menu-item">
-            <a href="#">About</a>
+            <a ref={textRef2} href="#">
+              About
+            </a>
           </div>
           <div className="menu-item">
-            <a href="#">Services</a>
+            <a ref={textRef3} href="#">
+              Services
+            </a>
           </div>
         </div>
       </div>

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Sitrus";
+  src: url("../assets/DxSitrus-Expanded.otf");
+}
+
 .main-navbar {
   height: 100%;
   width: 100%;
@@ -6,8 +11,6 @@
 .navbar-main {
   height: 150px;
   width: 100%;
-
-  background-color: rgb(165, 165, 165);
 }
 
 .navbar {
@@ -26,7 +29,7 @@
   display: flex;
   justify-content: flex-end;
   margin-right: 50px;
-  top: 60px;
+  top: 55px;
   position: fixed;
   z-index: 1000;
 }
@@ -42,6 +45,7 @@
   justify-content: center;
   width: 60px;
   height: 20px;
+  margin-right: 24px;
 }
 
 .lines {
@@ -56,7 +60,7 @@
 .line2 {
   width: 90%;
   height: 2px;
-  background-color: white;
+  background-color: black;
   border-radius: 20px;
   transition: all 0.2s ease;
   position: relative;
@@ -65,11 +69,13 @@
 .line1.active {
   transform: rotate(45deg);
   top: 8px;
+  background-color: white;
 }
 
 .line2.active {
   transform: rotate(-45deg);
   top: -8px;
+  background-color: white;
 }
 
 .menu-item {
@@ -79,7 +85,7 @@
 
 .menu {
   width: 100%;
-  height: 0;
+  height: 100%;
   z-index: 100;
   background: black;
   position: fixed;
@@ -87,12 +93,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -1000px;
   transition: all 0.6s cubic-bezier(0.87, 0, 0.13, 1);
 }
 .menu-item a {
   color: white;
   text-decoration: none;
-  font-size: 80px;
+  font-size: 120px;
   position: relative;
+  font-family: "Sitrus", sans-serif;
+  transition: transform 0.7s ease;
 }
