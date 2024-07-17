@@ -1,10 +1,9 @@
 @font-face {
-  font-family: "Sitrus";
-  src: url("../assets/DxSitrus-Expanded.otf");
+  font-family: "WagonBold";
+  src: url("../assets/Wagon-Bold.otf");
 }
 
 .main-navbar {
-  height: 100%;
   width: 100%;
 }
 
@@ -100,6 +99,7 @@
   text-decoration: none;
   font-size: 120px;
   position: relative;
-  font-family: "Sitrus", sans-serif;
+  font-family: "WagonBold", sans-serif;
   transition: transform 0.7s ease;
 }
+

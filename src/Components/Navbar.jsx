@@ -63,17 +63,17 @@ const Navbar = () => {
         <div className="menu-items">
           <div className="menu-item">
             <a ref={textRef1} href="#">
-              Home
+              HOME
             </a>
           </div>
           <div className="menu-item">
             <a ref={textRef2} href="#">
-              About
+              ABOUT
             </a>
           </div>
           <div className="menu-item">
             <a ref={textRef3} href="#">
-              Services
+              SERVICES
             </a>
           </div>
         </div>
